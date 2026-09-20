@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="奶奶还有水 - 沉浸式乡村生活与养老关怀平台。提供农村饮水安全解决方案、老年居家适老化改造指南、乡村生态农业资讯及孝亲敬老文化分享。">
+    <meta name="keywords" content="奶奶还有水, 乡村饮水, 养老关怀, 适老化改造, 生态农业, 孝亲敬老">
+    <title>奶奶还有水-乡村饮水安全与养老关怀服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a7c59;
+            --secondary-color: #8c5b4a;
+            --accent-color: #d4a373;
+            --bg-color: #f7f4ed;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #64748b;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #3a6345;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(74, 124, 89, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(140, 91, 74, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #c08b5e;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-more {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #eee;
+        }
+
+        /* Specific Sections */
+        .intro-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+
+        /* Service List */
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            transition: background 0.3s;
+        }
+
+        .service-item:hover {
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-brand p {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+
+            .newsletter-form {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">奶奶还有<span>水</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">饮水安全</a></li>
+                    <li><a href="#">居家养老</a></li>
+                    <li><a href="#">乡村资讯</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">我要咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>守护每一滴清泉<br>关爱每一位长辈</h1>
+                <p>专注于农村饮水安全监测与适老化居家改造，让乡村生活更健康，让老人晚年更安心。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索养老资讯、饮水方案...">
+                    <button type="button">搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro / Services -->
+        <section class="intro-section">
+            <div class="container intro-content">
+                <h2 class="section-title">我们的核心关注</h2>
+                <p class="intro-text">“奶奶还有水”致力于解决农村地区水质监测难、适老化设施缺失等痛点，提供从水源保护到居家护理的全链路支持。</p>
+                
+                <div class="service-list">
+                    <div class="service-item">
+                        <div class="service-icon">💧</div>
+                        <div class="service-name">饮水监测</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🛋️</div>
+                        <div class="service-name">适老化改造</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🌾</div>
+                        <div class="service-name">乡村生态</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">❤️</div>
+                        <div class="service-name">孝亲文化</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Water Safety Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">饮水安全指南</h2>
+                <a href="#" class="view-more">查看更多 &rarr;</a>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">农村水质</span>
+                        <img src="https://picsum.photos/seed/water1/400/300" alt="农村饮水安全">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">农村自来水常见污染物及处理方法</h3>
+                        <p class="card-desc">了解农村水源可能面临的微生物污染、重金属超标问题，掌握简单的家庭净化技巧。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>健康专家</span>
+                            </div>
+                            <span>5分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">净水设备</span>
+                        <img src="https://picsum.photos/seed/filter/400/300" alt="家用净水器">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">如何为留守老人挑选合适的净水设备</h3>
+                        <p class="card-desc">针对老年人操作习惯，推荐免维护、操作简单的RO反渗透净水器，并讲解滤芯更换流程。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>生活顾问</span>
+                            </div>
+                            <span>8分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">健康饮水</span>
+                        <img src="https://picsum.photos/seed/cup/400/300" alt="健康饮水习惯">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">老年人每日饮水量标准与误区</h3>
+                        <p class="card-desc">纠正“渴了再喝”的错误观念，介绍老年人肾脏功能变化与科学补水的重要性。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>营养师</span>
+                            </div>
+                            <span>4分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Elderly Care Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">居家养老关怀</h2>
+                <a href="#" class="view-more">查看更多 &rarr;</a>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">浴室改造</span>
+                        <img src="https://picsum.photos/seed/bath/400/300" alt="浴室防滑改造">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">浴室防滑改造：防止老人滑倒的必做功课</h3>
+                        <p class="card-desc">浴室是家中最危险的区域。本文详细介绍防滑垫铺设、扶手安装及地面坡度处理方案。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>改造专家</span>
+                            </div>
+                            <span>6分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">紧急呼叫</span>
+                        <img src="https://picsum.photos/seed/phone/400/300" alt="紧急呼叫系统">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">一键呼叫系统：独居老人的“生命线”</h3>
+                        <p class="card-desc">如何在家中安装简单的SOS紧急呼叫设备，确保老人在突发疾病或意外时能及时求救。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>安全顾问</span>
+                            </div>
+                            <span>5分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">饮食辅助</span>
+                        <img src="https://picsum.photos/seed/food/400/300" alt="饮食辅助工具">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">适合吞咽困难老人的饮食辅助工具推荐</h3>
+                        <p class="card-desc">针对中风或老年痴呆患者，介绍流食制作器、防呛咳餐具等实用工具的使用场景。</p>
+                        <div class="card-meta">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>护理师</span>
+                            </div>
+                            <span>7分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">农村自来水烧开就能直接喝吗？</div>
+                        <div class="faq-answer">不一定。虽然高温可以杀灭大部分细菌，但无法去除水垢、重金属和农药残留。建议安装家用净水器后再饮用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">适老化改造需要花费多少钱？</div>
+                        <div class="faq-answer">改造费用根据项目不同差异很大。简单的防滑垫和扶手安装可能仅需几百元，而全屋的卫浴和厨房改造可能需要数千元。我们提供不同预算的方案咨询。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何判断老人是否缺水？</div>
+                        <div class="faq-answer">除了口渴，老人缺水常表现为尿液颜色深黄、皮肤干燥、头晕乏力。建议每天定时提醒老人少量多次饮水。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>奶奶还有水</h3>
+                <p>致力于通过科技与人文关怀，改善农村老年人生活品质，守护每一滴安全用水，让爱无微不至。</p>
+            </div>
+            <div class="footer-col">
+                <h4>服务栏目</h4>
+                <ul>
+                    <li><a href="#">饮水安全知识</a></li>
+                    <li><a href="#">居家改造案例</a></li>
+                    <li><a href="#">健康食谱推荐</a></li>
+                    <li><a href="#">护理技巧大全</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">团队介绍</a></li>
+                    <li><a href="#">项目背景</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>订阅更新</h4>
+                <p style="color:#95a5a6; font-size:0.9rem; margin-bottom:10px;">获取最新的养老资讯与饮水安全指南。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="输入您的邮箱">
+                    <button type="submit">订阅</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 奶奶还有水服务平台 版权所有
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Just a visual feedback, as there are no actual anchors to scroll to
+                console.log('Navigating to: ' + this.getAttribute('href'));
+            });
+        });
+    </script>
+</body>
+                          </html>
