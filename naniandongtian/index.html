@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="那年冬天风在吹手机版在线阅读指南，提供正版授权阅读渠道、手机端适配功能介绍、剧情梗概及人物关系分析，帮助用户在移动设备上流畅体验这部感人至深的青春爱情故事。">
+    <meta name="keywords" content="那年冬天风在吹手机,那年冬天风在吹漫画,那年冬天风在吹在线阅读,那年冬天风在吹手机版,那年冬天风在吹剧情">
+    <title>那年冬天风在吹手机-正版漫画在线阅读与剧情解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b5e3c;
+            --primary-dark: #5d3a1f;
+            --secondary-color: #d4a373;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-read {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-read:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #f4e4d4 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(139, 94, 60, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* 推荐阅读 */
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .rating {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .btn-card {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 手机阅读指南 */
+        .guide-section {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+
+        .guide-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 剧情介绍 */
+        .plot-container {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .plot-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .plot-highlight {
+            background: linear-gradient(120deg, #fdfbf7 0%, #fff 100%);
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--primary-dark);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                那年冬天风在吹手机
+                <span>在线阅读指南</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#guide">手机阅读</a></li>
+                    <li><a href="#plot">剧情介绍</a></li>
+                    <li><a href="#recommend">相关推荐</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-read">立即阅读</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">治愈</span>
+                    <span class="tag">青春</span>
+                    <span class="tag">爱情</span>
+                    <span class="tag">手机版</span>
+                </div>
+                <h1>那年冬天风在吹手机版</h1>
+                <p>一部关于爱、失去与重逢的青春物语。无论身处何地，只需一部手机，即可随时重温这份刻骨铭心的感动。</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#" class="btn-read" style="padding: 0.8rem 2rem; font-size: 1.1rem;">开始阅读</a>
+                    <a href="#guide" style="padding: 0.8rem 2rem; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); border-radius: 4px; font-weight: 600;">阅读指南</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="guide">
+            <div class="guide-section">
+                <div class="guide-grid">
+                    <div class="guide-content">
+                        <h2>手机端阅读指南</h2>
+                        <p>为了让您在移动设备上获得最佳的阅读体验，我们整理了以下操作步骤。支持 iOS 与 Android 系统，无广告干扰，流畅不卡顿。</p>
+                        
+                        <div class="step-list">
+                            <div class="step-item">
+                                <strong>步骤一：选择正版平台</strong>
+                                <p>请访问官方授权的漫画阅读应用或网站，搜索“那年冬天风在吹”以确保阅读内容的完整性与安全性。</p>
+                            </div>
+                            <div class="step-item">
+                                <strong>步骤二：开启全屏模式</strong>
+                                <p>在手机浏览器或阅读器中，点击右上角的“全屏”图标，并建议开启“夜间模式”以保护视力。</p>
+                            </div>
+                            <div class="step-item">
+                                <strong>步骤三：调整缩放与翻页</strong>
+                                <p>根据屏幕尺寸自动适配布局。支持点击翻页与手势滑动切换，操作便捷。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/seed/mobileread/600/400" alt="手机阅读界面展示" class="guide-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="plot">
+            <h2 class="section-title">
+                剧情介绍
+                <a href="#" class="section-more">查看更多详情 &rarr;</a>
+            </h2>
+            <div class="plot-container">
+                <div class="plot-text">
+                    <p><strong>那年冬天风在吹</strong>是一部经典的青春恋爱漫画，讲述了少年仁杰与少女雪儿之间跨越十年的感人故事。</p>
+                    <p>故事的开端充满了误会与伤痛。仁杰因为儿时的阴影和家庭的变故，性格变得孤僻。而雪儿则是一个在失去双亲后，将仁杰视为唯一依靠的坚强女孩。然而，命运的捉弄让两人被迫分开，仁杰带着遗憾离开了家乡。</p>
+                    
+                    <div class="plot-highlight">
+                        “十年后，当风再次吹起的时候，我们是否还能认出彼此？”
+                    </div>
+
+                    <p>多年后，仁杰带着成熟与深沉重返故乡。此时，他发现曾经那个需要保护的女孩已经长成了亭亭玉立的少女。然而，生活并没有给予他们太多的甜蜜，现实的压力、过去的阴影以及第三者的介入，让这段感情充满了考验。故事在细腻的情感描绘中，展现了成长的代价与爱的救赎。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="recommend">
+            <h2 class="section-title">
+                相关推荐
+                <a href="#" class="section-more">浏览更多 &rarr;</a>
+            </h2>
+            <div class="recommend-grid">
+                <!-- 卡片 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/love1/400/500" alt="漫画封面" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">冬日恋歌同人</h3>
+                        <div class="card-meta">
+                            <span>类型：同人</span>
+                            <span>状态：连载中</span>
+                        </div>
+                        <p class="card-desc">基于经典剧情的延伸创作，描绘了角色们在分离后的另一种可能性。</p>
+                        <div class="card-footer">
+                            <span class="rating">9.2 分</span>
+                            <a href="#" class="btn-card">阅读 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/love2/400/500" alt="漫画封面" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">那年夏天的风</h3>
+                        <div class="card-meta">
+                            <span>类型：青春</span>
+                            <span>状态：完结</span>
+                        </div>
+                        <p class="card-desc">同样的青春悸动，不同的夏日故事。探索少年少女在盛夏的纯真情感。</p>
+                        <div class="card-footer">
+                            <span class="rating">8.8 分</span>
+                            <a href="#" class="btn-card">阅读 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/love3/400/500" alt="漫画封面" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">风之少年</h3>
+                        <div class="card-meta">
+                            <span>类型：治愈</span>
+                            <span>状态：连载中</span>
+                        </div>
+                        <p class="card-desc">关于成长与寻找自我的旅程，在这个喧嚣的世界里寻找内心的宁静。</p>
+                        <div class="card-footer">
+                            <span class="rating">9.0 分</span>
+                            <a href="#" class="btn-card">阅读 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>那年冬天风在吹手机</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        致力于为读者提供最优质的移动端阅读体验。我们尊重版权，只提供正版授权的在线阅读渠道。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新章节</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">投稿专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">阅读指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 那年冬天风在吹手机阅读指南网. All Rights Reserved. 本站内容仅供学习交流，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
