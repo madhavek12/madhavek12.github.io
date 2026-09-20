@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>警花王梦溪-人物风采与警务事迹专题</title>
+    <meta name="description" content="警花王梦溪专题页面，详细介绍王梦溪警官的从警经历、先进事迹、工作风采及社会影响，展现新时代公安干警的良好形象。">
+    <meta name="keywords" content="警花王梦溪, 王梦溪, 公安人物, 警务事迹, 英模风采, 执法为民">
+    <style>
+        :root {
+            --primary-color: #1a3b5c;
+            --secondary-color: #d32f2f;
+            --accent-color: #fbc02d;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 5px solid rgba(255,255,255,0.1);
+            max-width: 400px;
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-img-large {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid var(--bg-light);
+        }
+
+        .profile-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-list strong {
+            min-width: 80px;
+            color: var(--text-light);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #e0e0e0;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--secondary-color);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: inline-block;
+            max-width: 80%;
+        }
+
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            .profile-img-large {
+                width: 200px;
+                height: 200px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>🛡️</span> 警花王梦溪
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profile" class="active">人物简介</a></li>
+                    <li><a href="#timeline">从警历程</a></li>
+                    <li><a href="#achievements">主要事迹</a></li>
+                    <li><a href="#gallery">风采展示</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tags">
+                        <span class="tag">全国公安系统英雄模范</span>
+                        <span class="tag">基层一线民警</span>
+                        <span class="tag">巾帼建功标兵</span>
+                    </div>
+                    <h1>王梦溪：坚守初心，用法治阳光守护万家灯火</h1>
+                    <p>作为新时代青年民警的杰出代表，王梦溪同志扎根基层，爱岗敬业，在平凡的岗位上做出了不平凡的业绩，展现了当代女警的飒爽英姿与责任担当。</p>
+                    <a href="#profile" class="btn btn-primary">了解详情</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Using a generic placeholder representing a professional portrait -->
+                    <img src="https://picsum.photos/seed/police_woman/400/500" alt="警花王梦溪工作照">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h4>10+</h4>
+                    <p>从警年限</p>
+                </div>
+                <div class="stat-item">
+                    <h4>500+</h4>
+                    <p>破获案件</p>
+                </div>
+                <div class="stat-item">
+                    <h4>100%</h4>
+                    <p>群众满意率</p>
+                </div>
+                <div class="stat-item">
+                    <h4>20+</h4>
+                    <p>荣誉表彰</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section-padding">
+            <div class="container">
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <img src="https://picsum.photos/seed/police_portrait/300/300" alt="王梦溪肖像" class="profile-img-large">
+                        <h3>王梦溪</h3>
+                        <p style="color: var(--secondary-color);">二级警督</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">某市公安局刑侦支队<br>副支队长</p>
+                    </div>
+                    <div class="profile-info">
+                        <h2>人物简介</h2>
+                        <p>王梦溪，女，中共党员，现任某市公安局刑侦支队副支队长。她以女性特有的细腻与坚韧，在打击犯罪、服务群众的战场上屡建奇功。从警十余年来，她始终保持着昂扬的斗志和严谨的作风，被誉为刑侦战线的“铁娘子”。</p>
+                        <br>
+                        <h3>主要职责</h3>
+                        <ul class="info-list">
+                            <li><strong>案件侦破：</strong> 主导侦破各类重大刑事案件，特别是新型网络诈骗及涉众型经济犯罪案件。</li>
+                            <li><strong>队伍建设：</strong> 担任青年民警导师，传授办案经验与职业操守。</li>
+                            <li><strong>普法宣传：</strong> 积极参与社区普法活动，提升群众防范意识。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section-padding" style="background-color: var(--white);">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">从警历程</h2>
+                    <p class="section-subtitle">从青涩新警到业务骨干，每一步都坚实有力</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2013年</span>
+                            <h3>初入警营</h3>
+                            <p>通过公务员考试加入公安队伍，被分配至派出所从事社区警务工作，深入基层了解社情民意。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2016年</span>
+                            <h3>调入刑侦</h3>
+                            <p>因表现优异调入刑侦大队，开始接触刑事侦查工作，参与多起积案侦破，迅速成长为业务能手。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2019年</span>
+                            <h3>攻坚克难</h3>
+                            <p>带领专案组历时半年，成功打掉一个跨省电信诈骗团伙，挽回群众损失数百万元。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022年</span>
+                            <h3>荣誉加身</h3>
+                            <p>因在重大安保及专项行动中的突出贡献，被公安部授予“全国公安系统英雄模范”荣誉称号。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">主要事迹</h2>
+                    <p class="section-subtitle">用行动诠释忠诚，用担当践行使命</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>破案能手</h3>
+                        <p>王梦溪同志具备敏锐的洞察力和缜密的逻辑思维能力，善于从细微线索中发现突破口。她注重科技兴警，熟练运用大数据分析手段，多次在复杂案件中找到关键证据链。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>服务群众</h3>
+                        <p>她常说：“警察不仅要有雷霆手段，更要有菩萨心肠。”在办理案件的同时，她始终将群众利益放在首位，多次主动为困难受害人提供法律援助和心理疏导。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>钻研业务</h3>
+                        <p>她坚持学习最新的法律法规和侦查技术，撰写多篇专业论文在行业期刊发表，并多次在全省公安业务技能大赛中获得第一名。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container">
+                <p class="quote-text">“穿上这身警服，就意味着选择了责任与奉献。只要群众需要，我就会一直站在最前面。”</p>
+                <p class="quote-author">—— 王梦溪</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section-padding" style="background-color: var(--white);">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">工作风采</h2>
+                    <p class="section-subtitle">工作瞬间与荣誉时刻</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/courtroom/400/300" alt="审讯现场">
+                        <div class="gallery-caption">严谨审讯，还原真相</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/traffic_police/400/300" alt="路面执勤">
+                        <div class="gallery-caption">风雨无阻，守护平安</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/award_ceremony/400/300" alt="领奖时刻">
+                        <div class="gallery-caption">载誉归来，再接再厉</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/community_work/400/300" alt="社区走访">
+                        <div class="gallery-caption">深入社区，警民情深</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于王梦溪</h4>
+                    <p>致力于宣传公安英模事迹，弘扬社会正能量，搭建警民沟通桥梁。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#profile">人物简介</a></li>
+                        <li><a href="#timeline">从警历程</a></li>
+                        <li><a href="#achievements">主要事迹</a></li>
+                        <li><a href="#gallery">荣誉展示</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>办公地址：某市公安局刑侦支队</li>
+                        <li>联系电话：0XXX-1234567</li>
+                        <li>电子邮箱：contact@wangmengxi.org</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 王梦溪事迹专题网 版权所有 | 仅供展示使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
