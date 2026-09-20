@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="张津瑜记者个人主页。提供张津瑜的职业生涯、新闻报道作品、采访实录及相关行业动态查询。">
+    <meta name="keywords" content="张津瑜,记者,新闻,张津瑜记者,媒体人">
+    <title>张津瑜记者-个人主页与新闻报道资讯平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .profile-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 2rem;
+            border: 4px solid #fff;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            margin-top: auto;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--secondary-color);
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f1f1f1;
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+            
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                <span>Zhang Jinyu</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#articles">新闻报道</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>张津瑜记者</h1>
+            <p>专注深度调查报道与社会民生议题。致力于为公众呈现客观、真实、有深度的新闻视角。</p>
+            
+            <div class="profile-summary">
+                <div class="avatar-placeholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>5年+</h3>
+                        <p>从业经验</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>深度报道</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10w+</h3>
+                        <p>读者关注</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Section -->
+        <section id="articles">
+            <div class="section-title">
+                <h2>最新报道</h2>
+                <a href="#">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-layout">
+                <!-- Article 1 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">深度调查</span>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">2023年10月24日 · 城市观察</div>
+                        <h3><a href="#">数字化浪潮下的社区治理变革：以某某街道为例</a></h3>
+                        <p>随着智慧城市的推进，基层社区治理模式正在发生深刻变化。本文走访了多个试点社区，探讨技术如何赋能基层服务...</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">人物专访</span>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">2023年10月18日 · 职场</div>
+                        <h3><a href="#">记者手记：在喧嚣中寻找真相的力量</a></h3>
+                        <p>作为一名长期从事调查报道的记者，张津瑜分享了她职业生涯中的心路历程，以及在信息碎片化时代坚守新闻理想的意义...</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">社会热点</span>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">2023年10月12日 · 青年就业</div>
+                        <h3><a href="#">后疫情时代的青年就业现状与心理调适</a></h3>
+                        <p>针对当前复杂的就业环境，本系列报道深入分析了应届毕业生的求职困境，并提供专业的心理疏导建议...</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>关于张津瑜</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p><strong>张津瑜</strong>，资深记者，专注于社会民生、城市发展与商业观察领域。拥有5年以上的新闻采编经验，曾在多家主流媒体任职。</p>
+                        <p>她的报道风格以客观、理性著称，善于通过多维度的数据分析和实地走访，还原事件真相。她坚信，优秀的新闻作品应当既具备专业深度，又能引起读者的情感共鸣。</p>
+                        <ul class="contact-list">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <span>editor@zhangjinyu.com</span>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>中国 · 北京</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-text">
+                        <h3>核心关注领域</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                            <span style="background: #e3f2fd; color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">城市更新</span>
+                            <span style="background: #e3f2fd; color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">职场文化</span>
+                            <span style="background: #e3f2fd; color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">教育公平</span>
+                            <span style="background: #e3f2fd; color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">数字化转型</span>
+                            <span style="background: #e3f2fd; color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem;">环保议题</span>
+                        </div>
+                        <p style="margin-top: 20px;">张津瑜记者始终坚持新闻专业主义，致力于为公众提供有温度、有深度的新闻报道。如果您有采访需求或合作意向，欢迎通过上述方式联系。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archive Section -->
+        <section id="archive">
+            <div class="section-title">
+                <h2>历史归档</h2>
+            </div>
+            <div class="grid-layout">
+                <article class="card">
+                    <div class="card-body">
+                        <div class="card-meta">2023年09月</div>
+                        <h3><a href="#">秋日里的城市光影：摄影集锦</a></h3>
+                        <p>记录城市变迁的瞬间...</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <div class="card-meta">2023年08月</div>
+                        <h3><a href="#">暑期社会实践报告汇总</a></h3>
+                        <p>大学生群体的声音...</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <div class="card-meta">2023年07月</div>
+                        <h3><a href="#">夏季高温下的户外工作者</a></h3>
+                        <p>致敬每一个奋斗的身影...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 张津瑜记者工作室. All Rights Reserved.</p>
+            <p style="margin-top: 8px; font-size: 0.8rem; color: #999;">本站内容仅供资讯参考，不代表任何官方立场。</p>
+        </div>
+    </footer>
+
+</body>
+          </html>
