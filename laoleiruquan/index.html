@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老泪如泉 - 情感故事、人生感悟与文学随笔集</title>
+    <meta name="description" content="老泪如泉，一个专注于情感文学、人生感悟与故事分享的在线阅读平台。收录感人至深的散文、随笔与人生哲理，陪伴每一个在深夜里独自思考的灵魂。">
+    <meta name="keywords" content="老泪如泉, 情感文学, 人生感悟, 散文随笔, 故事分享, 心灵鸡汤">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a93226;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Featured Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+
+        /* Category Section */
+        .category-section {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .category-item {
+            padding: 20px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .category-item:hover {
+            border-color: var(--accent-color);
+            background-color: #fff5f5;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #34495e;
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .quote-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">老泪如<span>泉</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">情感散文</a></li>
+                    <li><a href="#">人生故事</a></li>
+                    <li><a href="#">作者专栏</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索故事...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>老泪如泉，诉说岁月的深情</h1>
+            <p>这里收藏着世间最真挚的情感，每一个故事都源于生活的沉淀。在文字中寻找共鸣，在感动中抚平内心的褶皱。</p>
+            <div>
+                <button class="btn" onclick="scrollToSection('featured')">阅读精选</button>
+                <button class="btn btn-outline" onclick="scrollToSection('about')">了解我们</button>
+            </div>
+        </section>
+
+        <!-- Featured Stories -->
+        <section id="featured" class="container">
+            <div class="section-title">
+                <h2>精选故事</h2>
+                <p>触动心灵的文字，记录真实的人生</p>
+            </div>
+            <div class="featured-grid">
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">亲情</span>
+                        <img src="https://picsum.photos/seed/oldtear1/400/300" alt="背影">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023年10月15日 · 阅读 3.2k</div>
+                        <h3 class="card-title"><a href="#">父亲的背影与那碗热汤</a></h3>
+                        <p class="card-excerpt">岁月无声，却总在细节处留下痕迹。每当深夜归家，看到厨房微弱的光亮，心中涌起的不仅是暖意，更是对时光流逝的感伤...</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>林深时见鹿</span>
+                            </div>
+                            <a href="#" style="color:var(--accent-color); font-weight:600;">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">回忆</span>
+                        <img src="https://picsum.photos/seed/oldtear2/400/300" alt="旧物">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023年10月12日 · 阅读 2.8k</div>
+                        <h3 class="card-title"><a href="#">抽屉深处的旧信</a></h3>
+                        <p class="card-excerpt">翻出那封泛黄的信纸，字迹已经模糊。那是一段回不去的青春，是一段未曾说出口的遗憾。老泪如泉，洗净了过往的尘埃...</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>往事如烟</span>
+                            </div>
+                            <a href="#" style="color:var(--accent-color); font-weight:600;">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">治愈</span>
+                        <img src="https://picsum.photos/seed/oldtear3/400/300" alt="雨夜">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023年10月10日 · 阅读 4.1k</div>
+                        <h3 class="card-title"><a href="#">雨夜的独白</a></h3>
+                        <p class="card-excerpt">在这个快节奏的时代，我们习惯了坚强，却忘了脆弱。偶尔允许自己软弱一次，听听内心的声音，也是一种成长。</p>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="author-avatar"></div>
+                                <span>流年似水</span>
+                            </div>
+                            <a href="#" style="color:var(--accent-color); font-weight:600;">阅读全文 &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container">
+            <div class="section-title">
+                <h2>分类浏览</h2>
+                <p>寻找你感兴趣的故事主题</p>
+            </div>
+            <div class="category-section">
+                <div class="category-grid">
+                    <a href="#" class="category-item">
+                        <span class="category-icon">❤️</span>
+                        <div class="category-name">亲情岁月</div>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span class="category-icon">💔</span>
+                        <div class="category-name">爱情故事</div>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span class="category-icon">🏫</span>
+                        <div class="category-name">校园回忆</div>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span class="category-icon">💼</span>
+                        <div class="category-name">职场感悟</div>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span class="category-icon">🌍</span>
+                        <div class="category-name">旅行见闻</div>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span class="category-icon">📚</span>
+                        <div class="category-name">读书笔记</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="quote-content">
+                <p class="quote-text">“老泪如泉，不是因为软弱，而是因为懂得了生活的重量。每一滴泪，都是灵魂与岁月的对话。”</p>
+                <p class="quote-author">—— 《老泪如泉》卷首语</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="about" class="container faq-section">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>关于阅读与投稿的解答</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何投稿我的故事？</div>
+                <div class="faq-answer">请将您的原创故事发送至投稿邮箱：editor@laoleiruquan.com，我们会尽快审核并联系您。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">文章是否支持转载？</div>
+                <div class="faq-answer">本站文章均为原创，转载请注明作者及来源“老泪如泉”。如有特殊授权需求，请联系编辑部。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何订阅更新通知？</div>
+                <div class="faq-answer">您可以关注我们的微信公众号“老泪如泉”，或在本站底部订阅邮件列表，第一时间获取最新文章。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>关于老泪如泉</h3>
+                <p style="font-size: 0.9rem; line-height: 1.8;">
+                    老泪如泉致力于为读者提供一个温暖、真诚的文学交流空间。我们相信，文字具有治愈人心的力量，愿每一个在深夜阅读的你，都能找到片刻的宁静与慰藉。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">最新文章</a></li>
+                    <li><a href="#">热门排行</a></li>
+                    <li><a href="#">作者入驻</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系方式</h3>
+                <ul>
+                    <li>邮箱：contact@laoleiruquan.com</li>
+                    <li>微信：laoleiruquan_official</li>
+                    <li>地址：中国·某市文学创意园区</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 老泪如泉 版权所有 | 保留所有权利</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+              </html>
