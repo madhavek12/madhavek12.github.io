@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玛雅网 powered - 玛雅预言与古代文明深度解读平台</title>
+    <meta name="description" content="玛雅网 powered 提供最权威的玛雅文明历史、历法解读、2012预言真相及古代玛雅文化研究。探索玛雅历法系统、金字塔建筑与神秘预言的当代科学视角。">
+    <meta name="keywords" content="玛雅网, 玛雅预言, 玛雅文明, 玛雅历法, 古代文明, 2012世界末日, 玛雅金字塔">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c19a6b;
+            --primary-dark: #8b5a2b;
+            --secondary-color: #2c3e50;
+            --bg-color: #f9f7f2;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-dark);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/maya/1600/600') no-repeat center center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.6rem;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .more-link {
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .more-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Featured Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: rgba(193, 154, 107, 0.1);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-excerpt {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 0.8rem;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .article-item {
+            display: flex;
+            gap: 1rem;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            align-items: center;
+        }
+
+        .article-item img {
+            width: 100px;
+            height: 80px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .article-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-color);
+            background-color: #fffdfb;
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Timeline/History Section */
+        .history-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #eee;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 1px #eee;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .article-item img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                玛雅网<span>powered</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#civilization">文明探源</a></li>
+                    <li><a href="#calendar">历法研究</a></li>
+                    <li><a href="#prediction">预言解析</a></li>
+                    <li><a href="#museum">数字博物馆</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>解读消失的文明</h1>
+                <p>深入探索中美洲玛雅文明的辉煌成就，解析神秘的历法系统与预言背后的科学逻辑。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Featured Content -->
+            <section id="featured">
+                <div class="section-header">
+                    <h2 class="section-title">深度推荐</h2>
+                    <a href="#" class="more-link">查看更多 &rarr;</a>
+                </div>
+                <div class="featured-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/maya_temple/800/400" alt="玛雅金字塔" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">考古发现</span>
+                            <h3 class="card-title">奇琴伊察：玛雅人的天文观测台</h3>
+                            <p class="card-excerpt">位于尤卡坦半岛的奇琴伊察不仅是军事和政治中心，更是古代玛雅人掌握天文学与历法计算的重要场所。本文详细解析库库尔坎金字塔的建造奥秘。</p>
+                            <div class="card-footer">
+                                <span>2023-10-15</span>
+                                <span>作者: 文明探索者</span>
+                            </div>
+                        </div>
+                    </article>
+                    <aside class="article-list">
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/maya_code/200/150" alt="玛雅文字">
+                            <div class="article-content">
+                                <h3><a href="#">破解玛雅象形文字：从石碑到羊皮卷</a></h3>
+                                <p>探索玛雅文字系统的独特之处及其在历史记录中的重要性。</p>
+                            </div>
+                        </article>
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/maya_food/200/150" alt="玛雅饮食">
+                            <div class="article-content">
+                                <h3><a href="#">玛雅人的餐桌：玉米与可可的文明</a></h3>
+                                <p>了解玛雅农业体系及其对饮食文化的深远影响。</p>
+                            </div>
+                        </article>
+                        <article class="article-item">
+                            <img src="https://picsum.photos/seed/maya_math/200/150" alt="玛雅数学">
+                            <div class="article-content">
+                                <h3><a href="#">零的概念：玛雅数学的伟大贡献</a></h3>
+                                <p>在西方数学引入零之前，美洲文明早已掌握了这一概念。</p>
+                            </div>
+                        </article>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section id="civilization">
+                <div class="section-header">
+                    <h2 class="section-title">文明分类</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <span class="cat-icon">🏛️</span>
+                        <div class="cat-title">建筑艺术</div>
+                        <p style="font-size:0.8rem; color:#666; margin-top:0.5rem;">金字塔与神庙</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">📜</span>
+                        <div class="cat-title">文字系统</div>
+                        <p style="font-size:0.8rem; color:#666; margin-top:0.5rem;">象形文字解读</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🔢</span>
+                        <div class="cat-title">数学与历法</div>
+                        <p style="font-size:0.8rem; color:#666; margin-top:0.5rem;">长纪年历详解</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🔮</span>
+                        <div class="cat-title">宗教信仰</div>
+                        <p style="font-size:0.8rem; color:#666; margin-top:0.5rem;">众神与祭司</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline -->
+            <section id="history">
+                <div class="section-header">
+                    <h2 class="section-title">历史脉络</h2>
+                </div>
+                <div class="history-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">公元前2000年 - 公元250年</div>
+                            <div class="timeline-content">
+                                <h4>前古典期</h4>
+                                <p>玛雅文明的雏形形成，农业社会确立，象形文字开始出现。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">公元250年 - 公元900年</div>
+                            <div class="timeline-content">
+                                <h4>古典期</h4>
+                                <p>玛雅文明达到鼎盛，蒂卡尔、帕伦克等城邦兴起，天文历法高度发达。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">公元900年 - 公元1524年</div>
+                            <div class="timeline-content">
+                                <h4>后古典期</h4>
+                                <p>中心转移至尤卡坦半岛北部，奇琴伊察成为主要城邦，受到托尔特克文化影响。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">1524年 - 1697年</div>
+                            <div class="timeline-content">
+                                <h4>西班牙殖民时期</h4>
+                                <p>欧洲殖民者入侵，玛雅文明遭受重创，最后据点在塔亚萨尔被攻陷。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="prediction">
+                <div class="section-header">
+                    <h2 class="section-title">预言解析与问答</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary-color);">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--secondary-color);">2012年世界末日是谣言吗？</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">2012年12月21日并非玛雅长纪年历的终点，而是第13个“巴克顿”周期的结束。玛雅人从未预言世界毁灭，这更多是现代人的过度解读。</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary-color);">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--secondary-color);">玛雅历法如何计算？</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">玛雅人使用复杂的数学系统，以20进制为基础，发明了“零”的概念。他们通过观察金星周期和太阳运行，制定了精准的长纪年历。</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: var(--border-radius); border-left: 4px solid var(--primary-color);">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--secondary-color);">玛雅文明为何突然消失？</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">学术界普遍认为环境破坏、资源枯竭、内战及外来疾病共同导致了古典期玛雅城邦的衰落。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于玛雅网 powered</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: #bdc3c7;">
+                        致力于传播玛雅文化知识，提供严谨的学术资料与通俗的科普解读，连接过去与未来。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">文明探源</a></li>
+                        <li><a href="#">历法计算器</a></li>
+                        <li><a href="#">遗址地图</a></li>
+                        <li><a href="#">在线图鉴</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">世界遗产名录</a></li>
+                        <li><a href="#">中美洲历史</a></li>
+                        <li><a href="#">考古学术期刊</a></li>
+                        <li><a href="#">博物馆合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 玛雅网 powered. 保留所有权利。本站内容仅供学习与交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
